@@ -1,20 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextPage</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HiKr CDN testing | Second Page</title>
 
-<body>
-    <h2>Next Page</h2>
-    <h2><a href="index.html">Return to Homepage</a></h2>
-    
-    <script src="https://pub-b926a0b6e5114d91b581ff076278508f.r2.dev/script.js"></script>
-    <script>
-        bpConfig('1928365883');
-    </script>
-</body>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2;
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            h1 {
+                color: #333;
+                text-align: center;
+            }
+
+            .button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+
+            .form-container {
+                margin-top: 20px;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 5px;
+            }
+
+            .form-container input[type="text"],
+            .form-container input[type="email"],
+            .form-container input[type="submit"] {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h2>Next Page</h2>
+        <h2><a href="index.html">Return to Homepage</a></h2>
+
+        <div>
+            <button class="button" type="button" name="button1">Button 1</button>
+            <button class="button" type="reset" name="button2">Button 2</button>
+        </div>
+
+        <div class="form-container">
+            <h2>Get in touch</h2>
+            <form action="https://localhost:4000/api/cdn/{endpoint}" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required />
+                <input type="email" name="email" placeholder="Your Email" required />
+                <button value="Submit" id="formSubmit" type="submit" class="button">
+                    Form Submit
+                </button>
+            </form>
+            <button value="Submit" id="submit" type="menu" class="button">
+                Submit
+            </button>
+        </div>
+        </div>
+
+        <script src="https://cdn.bouletteproof.rw/script.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                hikr.config({
+                    websiteId: "1928365883",
+                });
+
+                hikr.pushData({
+                    eventType: "click",
+                    collectionName: "User Info",
+                    data: "User Test Data",
+                });
+            });
+        </script>
+    </body>
 
 </html>

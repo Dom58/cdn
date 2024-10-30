@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Homepage | HiKr CDN testing</title>
+    </head>
 
-<body>
-    <h2>Homepeage</h2>
-    <h2><a href="nextpage.html">Navigate to CDN</a></h2>
+    <body>
+        <h2>Homepeage</h2>
+        <h2><a href="nextpage.html">Navigate to nextPage</a></h2>
 
-    <script src="https://pub-b926a0b6e5114d91b581ff076278508f.r2.dev/script.js"></script>
-    <script>
-        bpConfig('1928365883');
-    </script>
-</body>
+        <script src="https://cdn.bouletteproof.rw/script.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                hikr.config({
+                    websiteId: "1928365883",
+                });
+
+                hikr.pushData({
+                    eventType: "click",
+                    collectionName: "User Info",
+                    data: "User Test Data",
+                });
+            });
+        </script>
+    </body>
 
 </html>
