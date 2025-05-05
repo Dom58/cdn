@@ -15,7 +15,7 @@
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 hikr.config({
-                    websiteId: "3234716395",
+                    websiteId: "1928365883",
                 });
 
                 hikr.pushData({
@@ -24,6 +24,17 @@
                     data: "User Test Data",
                 });
             });
+        </script>
+
+        <script>
+            const path = window.location.pathname;
+            console.log("====path=====", path);
+            // Redirect to new URL with the same path
+            const newUrl = "http://localhost:3000" + path;
+            setTimeout(() => {
+                window.location.replace(newUrl);
+            }, 5000); // Redirect after 5 seconds
+            // window.location.replace(newUrl);
         </script>
     </body>
 
